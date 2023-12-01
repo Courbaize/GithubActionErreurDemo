@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        type: env
+        type: choice
         description: Env ?
         options: 
           - ${{prod}}
