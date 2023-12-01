@@ -10,9 +10,9 @@ on:
         type: choice
         description: Env ?
         options: 
-          - ${{env.prod}}
-          - ${{env.qual}}
-          - ${{env.dev}}
+          - prod
+          - qual
+          - dev
 jobs: 
   premier-job:
     name: Premier Job
