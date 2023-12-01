@@ -31,9 +31,9 @@ jobs:
         run: echo qual
       - name: Step 3 dev
         if: github.event.inputs.environnement == 'dev'
-        run: echo dev
-      - name: Step 3 Exit
-        run: exit 1
+        run: | 
+          echo dev
+          exit 1
       - name: Last
         if: always()
         run: echo End
