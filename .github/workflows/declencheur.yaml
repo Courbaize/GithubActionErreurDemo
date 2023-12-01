@@ -34,3 +34,6 @@ jobs:
         run: echo dev
       - name: Step 3 Exit
         run: exit 1
+      - name: Last
+        if: always()
+        run: echo End
