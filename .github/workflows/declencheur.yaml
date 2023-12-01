@@ -22,11 +22,11 @@ jobs:
         if: github.ref == 'refs/main'
         run: echo "Premier job"
       - name: Step 1 prod
-        if: github.event.inputs == ${{env.prod}}
-        run: echo ${{env.prod}}
+        if: github.event.inputs == prod
+        run: echo prod
       - name: Step 2 qual
-        if: github.event.inputs == ${{env.qual}}
-        run: echo ${{env.qual}}
+        if: github.event.inputs == qual
+        run: echo qual
       - name: Step 2 dev
-        if: github.event.inputs == ${{env.dev}}
-        run: echo ${{env.dev}}
+        if: github.event.inputs == dev
+        run: echo dev
