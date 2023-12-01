@@ -19,7 +19,7 @@ jobs:
     runs-on: Ubuntu-latest
     steps: 
       - name: checkout
-        if: github.ref == 'refs/heads/main'
+        if: ${{github.ref}} == 'refs/heads/main'
         uses: actions/checkout@v4
       - name: Current branch
         run: echo ${{github.ref}}
