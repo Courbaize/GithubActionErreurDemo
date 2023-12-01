@@ -10,9 +10,9 @@ on:
         type: choice
         description: Env ?
         options: 
-          - ${{prod}}
-          - ${{qual}}
-          - ${{dev}}
+          - ${{env.prod}}
+          - ${{env.qual}}
+          - ${{env.dev}}
 jobs: 
   premier-job:
     name: Premier Job
@@ -22,11 +22,11 @@ jobs:
         if: github.ref == 'refs/main'
         run: echo "Premier job"
       - name: Step 1 prod
-        if: github.event.inputs == ${{prod}}
-        run: echo ${{prod}}
+        if: github.event.inputs == ${{env.prod}}
+        run: echo ${{env.prod}}
       - name: Step 2 qual
-        if: github.event.inputs == ${{qual}}
-        run: echo ${{qual}}
+        if: github.event.inputs == ${{env.qual}}
+        run: echo ${{env.qual}}
       - name: Step 2 dev
-        if: github.event.inputs == ${{dev}}
-        run: echo ${{dev}}
+        if: github.event.inputs == ${{env.dev}}
+        run: echo ${{env.dev}}
