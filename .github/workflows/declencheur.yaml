@@ -19,8 +19,10 @@ jobs:
     runs-on: Ubuntu-latest
     steps: 
       - name: checkout
-        if: github.ref == 'refs/main'
-        run: echo "Premier job"
+        if: github.ref != 'refs/main'
+        uses: actions/checkout@v4
+        with:
+          path: main
       - name: Step 1 prod
         if: github.event.inputs.environnement == 'prod'
         run: echo prod
