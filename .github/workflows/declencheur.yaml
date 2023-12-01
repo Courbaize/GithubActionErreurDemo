@@ -22,7 +22,7 @@ jobs:
         if: github.ref != 'refs/heads/main'
         uses: actions/checkout@v4
         with:
-          path: main
+          path: refs/heads/main
       - name: Current branch
         run: echo ${{github.ref}}
       - name: Step 1 prod
