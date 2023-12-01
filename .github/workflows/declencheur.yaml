@@ -32,3 +32,5 @@ jobs:
       - name: Step 3 dev
         if: github.event.inputs.environnement == 'dev'
         run: echo dev
+      - name: Step 3 Exit
+        run: exit 1
