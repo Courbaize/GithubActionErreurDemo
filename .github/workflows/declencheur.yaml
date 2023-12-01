@@ -23,6 +23,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: main
+      - name: Current branch
+        run: echo ${{github.ref}}
       - name: Step 1 prod
         if: github.event.inputs.environnement == 'prod'
         run: echo prod
