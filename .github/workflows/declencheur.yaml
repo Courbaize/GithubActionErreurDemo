@@ -6,7 +6,7 @@ env:
 on: 
   workflow_dispatch:
     inputs:
-      name:
+      environnement:
         type: choice
         description: Env ?
         options: 
@@ -22,11 +22,11 @@ jobs:
         if: github.ref == 'refs/main'
         run: echo "Premier job"
       - name: Step 1 prod
-        if: github.event.inputs == 'prod'
+        if: github.event.inputs.environnement == 'prod'
         run: echo prod
       - name: Step 2 qual
-        if: github.event.inputs == 'qual'
+        if: github.event.inputs.environnement == 'qual'
         run: echo qual
-      - name: Step 2 dev
-        if: github.event.inputs == 'dev'
+      - name: Step 3 dev
+        if: github.event.inputs.environnement == 'dev'
         run: echo dev
